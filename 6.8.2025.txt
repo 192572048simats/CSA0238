@@ -1,0 +1,294 @@
+1️⃣ Program to Read and Print Elements of an Array
+include <stdio.h>
+void  main() 
+{
+    int n, i, arr[100];
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+    printf("Array elements are:\n");
+    for(i=0; i<n; i++)
+        printf("%d ", arr[i]);
+}
+
+Input:
+
+5
+1 2 3 4 5
+
+Output:
+
+Array elements are:
+1 2 3 4 5
+2️⃣ Program to Find the Sum of Elements of an Array
+
+#include <stdio.h>
+void main() {
+    int n, i, arr[100], sum = 0;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i=0; i<n; i++){
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+    printf("Sum of elements = %d", sum);
+}
+Input:
+
+5
+1 2 3 4 5
+
+Output:
+
+Sum of elements = 15
+3️⃣ Program to Find Maximum and Minimum Element
+
+#include <stdio.h>
+void main() {
+    int n, i, arr[100], max, min;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+    max = min = arr[0];
+    for(i=1; i<n; i++){
+        if(arr[i]>max) max=arr[i];
+        if(arr[i]<min) min=arr[i];
+    }
+    printf("Maximum = %d\nMinimum = %d", max, min);
+}
+
+Input:
+
+5
+10 3 45 6 2
+
+Output:
+
+Maximum = 45
+Minimum = 2
+4️⃣ Program to Reverse an Array
+
+#include <stdio.h>
+void main() {
+    int n, i, arr[100];
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+    printf("Reversed array:\n");
+    for(i=n-1; i>=0; i--)
+        printf("%d ", arr[i]);
+}
+
+Input:
+
+5
+1 2 3 4 5
+
+Output:
+
+Reversed array:
+5 4 3 2 1
+5️⃣ Program for Linear Search
+
+#include <stdio.h>
+void main() {
+    int n, i, arr[100], key, found=0;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+    printf("Enter element to search: ");
+    scanf("%d", &key);
+    for(i=0; i<n; i++){
+        if(arr[i]==key){
+            printf("Element found at position %d", i+1);
+            found=1;
+            break;
+        }
+    }
+    if(!found) printf("Element not found");
+}
+
+Input:
+
+5
+10 20 30 40 50
+30
+
+Output:
+
+Element found at position 3
+6️⃣ Program to Sort an Array in Ascending Order
+include <stdio.h>
+void main() {
+    int n, i, j, temp, arr[100];
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+    for(i=0; i<n-1; i++){
+        for(j=i+1; j<n; j++){
+            if(arr[i]>arr[j]){
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    printf("Array in ascending order:\n");
+    for(i=0; i<n; i++)
+        printf("%d ", arr[i]);
+}
+
+Input:
+
+5
+5 3 1 4 2
+
+Output:
+
+Array in ascending order:
+1 2 3 4 5
+7️⃣ Program to Insert an Element in an Array
+
+#include <stdio.h>
+void main() {
+    int n, i, pos, value, arr[100];
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+    printf("Enter position to insert: ");
+    scanf("%d", &pos);
+    printf("Enter value to insert: ");
+    scanf("%d", &value);
+    for(i=n; i>=pos; i--)
+        arr[i]=arr[i-1];
+    arr[pos-1]=value;
+    n++;
+    printf("Array after insertion:\n");
+    for(i=0; i<n; i++)
+        printf("%d ", arr[i]);
+}
+
+Input:
+
+5
+1 2 4 5 6
+3
+3
+
+Output:
+
+Array after insertion:
+1 2 3 4 5 6
+8️⃣ Program to Delete an Element from an Array
+
+#include <stdio.h>
+void main() {
+    int n, i, pos, arr[100];
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+    printf("Enter position to delete: ");
+    scanf("%d", &pos);
+    for(i=pos-1; i<n-1; i++)
+        arr[i]=arr[i+1];
+    n--;
+    printf("Array after deletion:\n");
+    for(i=0; i<n; i++)
+        printf("%d ", arr[i]);
+}
+
+Input:
+
+5
+1 2 3 4 5
+3
+
+Output:
+
+Array after deletion:
+1 2 4 5
+
+9️⃣ Program to Find Frequency of Elements in an Array
+
+#include <stdio.h>
+void  main() {
+    int n, i, j, count, arr[100], visited[100]={0};
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d elements:\n", n);
+    for(i=0; i<n; i++)
+        scanf("%d", &arr[i]);
+    printf("Frequency of each element:\n");
+    for(i=0; i<n; i++){
+        if(visited[i]==1) continue;
+        count=1;
+        for(j=i+1; j<n; j++){
+            if(arr[i]==arr[j]){
+                count++;
+                visited[j]=1;
+            }
+        }
+        printf("%d occurs %d times\n", arr[i], count);
+    }
+}
+
+Input:
+
+6
+1 2 2 3 1 4
+
+Output:
+
+1 occurs 2 times
+2 occurs 2 times
+3 occurs 1 times
+4 occurs 1 times
+➡️10.Program to merge two arrays
+include <stdio.h>
+void main() {
+    int n1, n2, i, arr1[100], arr2[100], merge[200];
+    printf("Enter number of elements in first array: ");
+    scanf("%d", &n1);
+    printf("Enter %d elements:\n", n1);
+    for(i=0; i<n1; i++)
+        scanf("%d", &arr1[i]);
+    printf("Enter number of elements in second array: ");
+    scanf("%d", &n2);
+    printf("Enter %d elements:\n", n2);
+    for(i=0; i<n2; i++)
+        scanf("%d", &arr2[i]);
+    for(i=0; i<n1; i++)
+        merge[i]=arr1[i];
+    for(i=0; i<n2; i++)
+        merge[n1+i]=arr2[i];
+    printf("Merged array:\n");
+    for(i=0; i<n1+n2; i++)
+        printf("%d ", merge[i]);
+}
+Input:
+
+3
+1 2 3
+3
+4 5 6
+
+Output:
+
+Merged array:
+1 2 3 4 5 6.
+
